@@ -32,7 +32,7 @@ python -m defpacker pack input_dir/ output.7z --levels 5 --types short longer w_
 python -m defpacker unpack protected.zip output_dir/
 ```
 
-### Programmatic Usage
+### Использовать как библиотеку
 
 ```python
 from defpacker.core import DefPacker
