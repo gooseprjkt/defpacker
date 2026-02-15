@@ -1,38 +1,34 @@
 # DefPacker
 
-DefPacker is a powerful tool for protecting archives using advanced obfuscation and encryption techniques. It makes analysis harder by using multiple layers of protection.
+DefPacker - упаковщик архивов, надежно защищающий файлы
 
-## Features
+## Фишки
 
-- **Multi-layer Obfuscation**: Creates deep directory trees with obfuscated names
-- **Multiple Obfuscation Patterns**:
-  - Short names (a, b, c, d)
-  - Longer names (a3, x0, y0, po)
-  - W-like patterns (16-char strings with 'W's and 'o's)
-- **Fake Files**: Generates files with similar sizes to real files
-- **Advanced Encryption**: AES-256 encryption with strong key derivation
-- **Secure Manifest**: Encoded manifest with obfuscated paths
-- **Flexible Archive Formats**: Support for ZIP, TAR.GZ, TAR.BZ2, TAR.XZ, 7Z
-- **Customizable Encoding**: Built-in encoder with configurable junk insertion
+- **Глубокая обфускация**: Защита различными путающими названиями
+- **Фейковые файлы**: Генерация файлов с похожим размеров
+- **Шифрование**: AES-256 защита
+- **Странный манифест**: Простой, но странный на вид энкодинг
+- **Форматы**: Поддержка ZIP, TAR.GZ, TAR.BZ2, TAR.XZ, 7Z
+- **Энкодер**: Встроенный энкодер с мусором
 
-## Installation
+## Установка зависимостей
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## Использование
 
-### Command Line Interface
+### Командная строка
 
 ```bash
-# Pack files with default settings
+# Упаковка
 python -m defpacker pack input_dir/ output.zip
 
-# Pack with custom settings
+# Упаковка на ваш вкус
 python -m defpacker pack input_dir/ output.7z --levels 5 --types short longer w_like --encrypt --format 7z
 
-# Unpack protected archive
+# Распаковка
 python -m defpacker unpack protected.zip output_dir/
 ```
 
@@ -57,10 +53,8 @@ packer.unpack(
 )
 ```
 
-## Architecture
+## Архитектура
 
-- `core/`: Main DefPacker logic
-- `encoder/`: Built-in encoding/obfuscation engine
-- `cli/`: Command-line interface
-- `utils/`: Helper utilities
-- `tests/`: Unit and integration tests
+- `core/`: Главная логика
+- `encoder/`: Энкодер
+- `cli/`: Командный интерфейс
